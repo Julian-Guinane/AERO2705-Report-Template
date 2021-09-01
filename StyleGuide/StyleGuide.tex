@@ -1,0 +1,97 @@
+\subsection{General}
+\begin{itemize}
+    \item \href{https://www.ctan.org/tex-archive/info/l2tabu/english/}{l2tabu} is a comprehensive list of dos and don'ts and is considered ``required reading'' for \LaTeX{} users. More info can also be found \href{https://faculty.math.illinois.edu/~hildebr/tex/tips.html}{here} for general tips.
+    \item Packages may become obsolete or conflict. \href{http://www.macfreek.nl/memory/LaTeX_package_conflicts}{LaTex Package Conflicts} is a good list of these.
+    \item New lines can create unwanted space in the compiled document. To make more readable, use \% to comment blank lines before and after commands.
+    \item Never break paragraphs using \verb|\\| or \verb|\par|. Add a blank line instead.
+    \item Always make sure any compile errors and warnings have been resolved before completing a document.
+\end{itemize}
+% 
+\subsection{Numbers \& Equations}
+\begin{itemize}
+    \item \LaTeX{} swallows spaces in math environments so add them where you see fit to make code more readable.
+    \item The \verb|phyiscs| package defines many handy commands for typesetting equations in math environments. The full documentation can be found \href{https://ctan.org/pkg/physics?lang=en}{here}. Commonly used commands are in \Cref{tab:PhysicsCommands}.
+    \begin{table*}
+        \centering
+        \caption{physics package commands}
+        \label{tab:PhysicsCommands}
+        \begin{tabular}{lll}
+            \verb|\qty()| & $\verb|\qty(\dots)| \longrightarrow \qty(\dots)$ & automatic brace sizing \\
+            \verb|\qty{}| & $\verb|\qty{\dots}| \longrightarrow \qty{\dots}$ & \\
+            \verb|\qty[]| & $\verb|\qty[\dots]| \longrightarrow \qty[\dots]$ & \\
+            \verb|\vectorbold| & $\verb|\vb{a}| \longrightarrow \vb{a}$ & bolded vectors \\
+            \verb|\vectorarrow| & $\verb|\va{a}| \longrightarrow \va{a}$ & arrow bolded vectors \\
+            \verb|\vectorunit| & $\verb|\vu{a}| \longrightarrow \vu{a}$ & unit bolded vectors \\
+            \verb|\gradient| & $\verb|\grad{\Psi}| \longrightarrow \grad{\Psi}$ &  \\
+            \verb|\divergence| & $\verb|\div{\Psi}| \longrightarrow \div{\Psi}$ &  \\
+            \verb|\curl| & $\verb|\curl{\Psi}| \longrightarrow \curl{\Psi}$ &  \\
+            \verb|\differential| & $\verb|\dd{x}|\ \longrightarrow \dd{x}$ & \\
+            & $\verb|\dd[2]{x}|\ \longrightarrow \dd[2]{x}$ & \\
+             \verb|\derivative| & $\verb|\dv{x}|\ \longrightarrow \dv{x}$ & \\
+            & $\verb|\dv{y}{x}|\ \longrightarrow \dv{y}{x}$ & \\
+            & $\verb|\dv[2]{y}{x}|\ \longrightarrow \dv[2]{y}{x}$ & \\
+            \verb|\partialderivative| & $\verb|\pdv{x}|\ \longrightarrow \pdv{x}$ & \\
+            & $\verb|\pdv{y}{x}|\ \longrightarrow \pdv{y}{x}$ & \\
+            & $\verb|\pdv[2]{y}{x}|\ \longrightarrow \pdv[2]{y}{x}$ & \\
+        \end{tabular}
+    \end{table*}
+    \begin{itemize}
+        \item The standard set of trig functions is redefined in \verb|physics| to provide automatic braces that behave like \verb|\qty()| when used as \verb|\sin(...)|. 
+    \end{itemize}
+    \item The \verb|siunitx| package is useful for in-text numbers. Numbers should not be entered in text mode unless they are part of a name (e.g. Pixel 2XL). The full documentation can be found \href{https://ctan.org/pkg/siunitx?lang=en}{here}. Commonly used commands are in \Cref{tab:SiunitxCommands}.
+    \begin{table*}
+        \centering
+        \caption{siunitx package commands}
+        \label{tab:SiunitxCommands}
+        \begin{tabular}{lll}
+            \verb|\num{}| & $\verb|\num{123}| \longrightarrow \num{123}$ & consistent in-text numbers \\
+            \verb|\ang{}| & $\verb|\ang{45}| \longrightarrow \ang{45}$ & proper degree symbol \\
+            \verb|\si{}| & $\verb|\si{\m\per\s}| \longrightarrow \si{\m\per\s}$ & formatted SI units \\
+            \verb|\si{}| & $\verb|\SI{123}{\m\per\s}| \longrightarrow \SI{123}{\m\per\s}$ & formatted SI units with number \\
+        \end{tabular}
+    \end{table*}
+    \item Single line equation: \input{StyleGuide/Templates/EqSingleLine}
+    \item Aligned equations: \input{StyleGuide/Templates/EqAligned}
+    \item Sub-equations: \input{StyleGuide/Templates/EqSubeqs}
+    \item Split equations: \input{StyleGuide/Templates/EqSplit}
+    \item Multiple equations in one line (avoid in general): \input{StyleGuide/Templates/EqMultiOneLine}
+\end{itemize}
+% 
+\subsection{Figures}
+\begin{itemize}
+    \item Standard figure: \Cref{fig:Standard}. Note that the \verb|width=\columnwidth| for figures placed in the body.
+    \input{StyleGuide/Templates/FigStandard}
+    \item Figure across two columns (specific to twocolumn option being used): \Cref{fig:TwoColumn}. Note that the \verb|width=\textwidth| for figures placed across all columns.
+    \input{StyleGuide/Templates/FigTwoColumn}
+    \item Sub-figures: \Cref{fig:Subfigs}. Note that the third uncaptioned figure can be used for a legend or removed.
+    \input{StyleGuide/Templates/FigSubfigs}
+    \item Multiple figures in one line: \Cref{fig:Multifig1,fig:Multifig2}.
+    \input{StyleGuide/Templates/FigMultifigs}
+\end{itemize}
+% 
+\subsection{Tables}
+\begin{itemize}
+    \item Tables should generally adhere to formatting guidelines defined by the \href{https://ctan.org/pkg/booktabs?lang=en}{booktabs} package. The below templates are provided.
+    \item For pages with more than one columns, the \verb|table*| environment can be used to span all columns.
+    \item Standard table: \Cref{tab:Standard}. Note that \verb|\makecell[<anchor>]{<text\\text>}| can be used to split headers across multiple lines.
+    \input{StyleGuide/Templates/TabStandard}
+    \item Subheadings with column rules: \Cref{tab:Subheadings}
+    \input{StyleGuide/Templates/TabSubheadings}
+    \item Set Width Table: \Cref{tab:SetWidth}
+    \input{StyleGuide/Templates/TabSetWidth}
+    \item \verb|longtable| can also be used to create tables that break over more than one page.
+\end{itemize}
+% 
+\subsection{Cross Referencing} 
+\begin{itemize}
+    \item Always use \verb|\{Cref{<label>}| for cross-referencing rather than \verb|Figure \ref{<label>}|, as the \verb|cleveref| package includes the label.
+    \item Clickable URLs can be typeset with \verb|\href{<url>}{<text>}|, (e.g. \href{www.google.com}{Google}).
+    \item References are typeset using \verb|biblatex| and can be printed using \verb|\printbibliography|. References are defined in \verb|refs.bib|, where templates are given for a number of document types.
+\end{itemize}
+% 
+\subsection{Misc.}
+\begin{itemize}
+    \item ToDo items can be left with the \verb|\todo{<note>}| command and will render in the margin as well as in the Notes section if \verb|\listoftodos[Notes]| is present. \todo{This is what a TODO looks like.}
+    \item Code can be typeset with the \verb|listings| package using \verb|\lstinputlisting{<path/to/code>}|. Currently syntax highlighting is set for MATLAB.
+    \item Sections can be made landscape using the \verb|landscape| environment.
+\end{itemize}

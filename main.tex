@@ -1,0 +1,87 @@
+\documentclass[draft,article]{UsydReport}
+
+%% Variable Definitions %%
+\newcommand{\reporttitle}{AERO2705 - Space Engineering 1 \\[1Em] Assignment Style Guide}
+\newcommand{\authorname}{Prepared by: Julian Guinane}
+\newcommand{\authorSID}{}
+
+\title{Title}
+\author{Author}
+\date{\today}
+
+\begin{document}
+\frontmatter
+\input{Sections/TitlePage.tex}
+% \maketitle
+\newpage
+\tableofcontents
+% \newpage
+% \listoffigures
+% \newpage
+% \listoftables
+
+\newpage
+\mainmatter
+% 
+\todo{inline, caption={Contents}}{\begin{itemize}
+    \item Sections and Numbered Headings
+    \item Equations
+    \item Figures and Captions
+    \item Tables and Captions
+    \item References
+\end{itemize}}
+
+\section{Report Structure}
+When writing up an assignment, always clearly structure your report with numbered headings and subheadings. Some reports use a standard format such as:
+\begin{enumerate}
+    \item Introduction
+    \item Methodology
+    \item Results and Discussion
+    \item Conclusions
+\end{enumerate}
+In some cases, it might be better to structure your report with respect to assignment questions:
+\begin{enumerate}
+    \item Question 1
+    \item Question 2
+    \item Question 3
+\end{enumerate}
+It is up to you to decide what is most suitable.
+
+\section{Equations}
+Below are some examples of well formatted equations:
+\begin{itemize}
+    \item Single line equation: \input{StyleGuide/Templates/EqSingleLine}
+    \item Aligned equations: \input{StyleGuide/Templates/EqAligned}
+    \item Sub-equations: \input{StyleGuide/Templates/EqSubeqs}
+    \item Split equations: \input{StyleGuide/Templates/EqSplit}
+    \item Multiple equations in one line (avoid in general): \input{StyleGuide/Templates/EqMultiOneLine}
+\end{itemize}
+Key points to remember are:
+\begin{itemize}
+    \item Equations must always be numbered and referred to in the body of the text.
+    \item It is very rare that equations are placed \textit{inline}. For example, $\curl{\vb{B}} = \mu_0\qty(\vb{J} + \varepsilon_0 \pdv{E}{t})$ is poorly formatted and hard to read. It is much better to place the equation in a separate line and refer to it, as in \Cref{eq:DisplayMath}.
+    \item While it is usually up to personal preference, be consistent when defining equations as either:
+    \begin{itemize}
+        \item Defined inside of sentence:
+            \begin{equation}
+                c^2 = a^2 + b^2
+            \end{equation}
+        where $c$ is the hypotenuse side-length, and $a$ and $b$ are the other side lengths.
+        \item Or defined separately and referred to, as in \Cref{eq:Refer}, where $\vb{E}$ is the electric field, $\rho$ is the charge density, and $\varepsilon_0$ is the permittivity of free space.
+        \begin{equation}\label{eq:Refer}
+            \div{\vb{E}} = \frac{\rho}{\varepsilon_0}
+        \end{equation}
+    \end{itemize}
+    Whichever style you choose is normally fine, as long as you only use one throughout your report.
+    \item Where a variable represents a vector, always denote is as such using bold notation ($\vb{v}$) or arrow notation ($\va{v}$). Again, remain consistent in using one or the other.
+\end{itemize}
+
+\section{Figures}
+
+
+\clearpage
+\backmatter{}
+\printbibliography[heading=bibintoc]
+\listoftodos[Notes]
+\input{Sections/Appendix}
+\end{document}
