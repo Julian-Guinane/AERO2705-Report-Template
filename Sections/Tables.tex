@@ -1,0 +1,26 @@
+\section{Tables}
+Tables are another good way to clearly format data. Table formatting rules vary between publications, though for university assignments there are some general rules to follow. As in \Cref{tab:Table}, some key points to remember when formatting tables are:
+\begin{itemize}
+    \item Table captions are always numbered and go \textbf{above} the table.
+    \item As with figures, no table should be included unless it is directly referred to in your writing.
+    \item Use appropriate significant figures when listing numbers.
+    \item Always include units in the column header when the units for a given column are all the same.
+    \item Reduce clutter by removing vertical separation lines and any double rules.
+    \item Similarly, don't use colours if it isn't absolutely necessary.
+    \item Group column headings where possible to clarify relationships between datasets.
+\end{itemize}
+
+\begin{table}
+    \centering
+    \caption{An example of a well formatted table.}
+    \label{tab:Table}
+    \begin{tabular}{@{}llr@{}} \toprule
+    \multicolumn{2}{c}{Item} \\ \cmidrule(r){1-2}
+    Animal & Description & Price (\$)\\ \midrule
+    Gnat & per gram & 13.65 \\
+    & each & 0.01 \\
+    Gnu & stuffed & 92.50 \\
+    Emu & stuffed & 33.33 \\
+    Armadillo & frozen & 8.99 \\ \bottomrule
+    \end{tabular}
+\end{table}

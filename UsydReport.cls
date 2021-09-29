@@ -206,3 +206,10 @@
         \today\\}
     \end{minipage}}\\[2em]   
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title page defaults
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\reporttitle}{Title of Report}
+\newcommand{\authorname}{~}
+\newcommand{\authorSID}{~} 

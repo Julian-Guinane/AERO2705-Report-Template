@@ -11,7 +11,18 @@
 \begin{itemize}
     \item \LaTeX{} swallows spaces in math environments so add them where you see fit to make code more readable.
     \item The \verb|phyiscs| package defines many handy commands for typesetting equations in math environments. The full documentation can be found \href{https://ctan.org/pkg/physics?lang=en}{here}. Commonly used commands are in \Cref{tab:PhysicsCommands}.
-    \begin{table*}
+    \begin{itemize}
+        \item The standard set of trig functions is redefined in \verb|physics| to provide automatic braces that behave like \verb|\qty()| when used as \verb|\sin(...)|. 
+    \end{itemize}
+    \item The \verb|siunitx| package is useful for in-text numbers. Numbers should not be entered in text mode unless they are part of a name (e.g. Pixel 2XL). The full documentation can be found \href{https://ctan.org/pkg/siunitx?lang=en}{here}. Commonly used commands are in \Cref{tab:SiunitxCommands}.
+    \item Single line equation: \input{StyleGuide/Templates/EqSingleLine}
+    \item Aligned equations: \input{StyleGuide/Templates/EqAligned}
+    \item Sub-equations: \input{StyleGuide/Templates/EqSubeqs}
+    \item Split equations: \input{StyleGuide/Templates/EqSplit}
+    \item Multiple equations in one line (avoid in general): \input{StyleGuide/Templates/EqMultiOneLine}
+\end{itemize}
+% 
+\begin{table*}
         \centering
         \caption{physics package commands}
         \label{tab:PhysicsCommands}
@@ -35,11 +46,8 @@
             & $\verb|\pdv[2]{y}{x}|\ \longrightarrow \pdv[2]{y}{x}$ & \\
         \end{tabular}
     \end{table*}
-    \begin{itemize}
-        \item The standard set of trig functions is redefined in \verb|physics| to provide automatic braces that behave like \verb|\qty()| when used as \verb|\sin(...)|. 
-    \end{itemize}
-    \item The \verb|siunitx| package is useful for in-text numbers. Numbers should not be entered in text mode unless they are part of a name (e.g. Pixel 2XL). The full documentation can be found \href{https://ctan.org/pkg/siunitx?lang=en}{here}. Commonly used commands are in \Cref{tab:SiunitxCommands}.
-    \begin{table*}
+% 
+\begin{table*}
         \centering
         \caption{siunitx package commands}
         \label{tab:SiunitxCommands}
@@ -50,12 +58,6 @@
             \verb|\si{}| & $\verb|\SI{123}{\m\per\s}| \longrightarrow \SI{123}{\m\per\s}$ & formatted SI units with number \\
         \end{tabular}
     \end{table*}
-    \item Single line equation: \input{StyleGuide/Templates/EqSingleLine}
-    \item Aligned equations: \input{StyleGuide/Templates/EqAligned}
-    \item Sub-equations: \input{StyleGuide/Templates/EqSubeqs}
-    \item Split equations: \input{StyleGuide/Templates/EqSplit}
-    \item Multiple equations in one line (avoid in general): \input{StyleGuide/Templates/EqMultiOneLine}
-\end{itemize}
 % 
 \subsection{Figures}
 \begin{itemize}
@@ -72,7 +74,7 @@
 \subsection{Tables}
 \begin{itemize}
     \item Tables should generally adhere to formatting guidelines defined by the \href{https://ctan.org/pkg/booktabs?lang=en}{booktabs} package. The below templates are provided.
-    \item For pages with more than one columns, the \verb|table*| environment can be used to span all columns.
+    \item For pages with more than one column, the \verb|table*| environment can be used to span all columns.
     \item Standard table: \Cref{tab:Standard}. Note that \verb|\makecell[<anchor>]{<text\\text>}| can be used to split headers across multiple lines.
     \input{StyleGuide/Templates/TabStandard}
     \item Subheadings with column rules: \Cref{tab:Subheadings}
